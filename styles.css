@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #2c3e50;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 5px;
+    background-color: #34495e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #7f8c8d;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.cell:hover {
+    background: linear-gradient(145deg, #95a5a6, #6c7a89);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cell.revealed {
+    background-color: #bdc3c7;
+    border-color: #ecf0f1;
+    color: #2c3e50;
+    font-size: 1.2em;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cell.mine.revealed {
+    background-color: #e74c3c;
+    color: #fff;
+    font-weight: bold;
+    border-color: #c0392b;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cell.marked {
+    background-color: #d6e73c;
+    color: #fff;
+    font-weight: bold;
+    border-color: #e5ff00;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cell.mine.win {
+    background-color: #27ae60;
+    color: #fff;
+    font-weight: bold;
+    border-color: #229954;
+}
+
+.cell.flagged {
+    background-color: #f39c12;
+    color: #fff;
+    font-weight: bold;
+    border-color: #e67e22;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#game-status {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: #ecf0f1;
+}
+
+#restart-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#restart-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
